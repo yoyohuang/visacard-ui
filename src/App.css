@@ -1,0 +1,66 @@
+.card{
+  width:576px;
+  height:344px;
+  background-color: #171a1c;
+  border-radius: 16px;
+  color: #47474e;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  padding: 32px;
+}
+
+.paymentDetails{
+  padding: 5px;
+}
+
+article > div:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+article > div:nth-child(3){
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+input[name="cardNumber"]{
+  color: white;
+  font-size: 32px;
+  background-color: #171a1c;
+  border: none;
+  outline: none;
+}
+
+input[name="ccvNumber"]{
+  color: white;
+  background-color: #171a1c;
+  border: none;
+  outline: none;
+  width: 32px;
+}
+
+input[name="month"]{
+  color: white;
+  background-color: #171a1c;
+  border: none;
+  outline: none;
+}
+
+input[name="year"]{
+  color: white;
+  background-color: #171a1c;
+  border: none;
+  outline: none;
+}
+::placeholder{
+  color: grey;
+}
+.expiration{
+  display: flex;
+  justify-content: space-between;
+}

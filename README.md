@@ -1,6 +1,6 @@
 # visacard-ui
 
-I refered a website called codepen.io to practice UI of visa card.
+I referred a website called codepen.io to practice UI of visa card.
 
 The refrence website: https://codepen.io/marcobiedermann/full/XmOdNP
 

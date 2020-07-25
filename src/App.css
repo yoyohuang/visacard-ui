@@ -1,92 +1,67 @@
-.card{
-  width:576px;
-  height:344px;
-  background-color: #171a1c;
-  border-radius: 16px;
-  color: #47474e;
+*{
+  border:solid 1px black;
+}
+
+html, body{
+  margin: 0px; 
+  padding: 0px;
+}
+
+.resume{
+  height: 100%;
+  display:flex;
+  overflow:scroll;
+  max-width:900px;
+  min-width:760px;
   margin:auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-  padding: 32px;
 }
 
-.paymentDetails{
-  padding: 5px;
+.left{
+  width:30%;
+  background: red;
 }
 
-article > div:nth-child(1){
-  display: flex;
-  justify-content: space-between;
-  font-size: 24px;
+.photo{
+  border-radius: 100%;
+  width: 160px;
+  height: 160px;
+  object-fit:cover;
+  object-position: 60% 0;
+  display:block;
+  margin: 10px auto 0;
 }
 
-article > div:nth-child(3){
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-}
-
-input[name="cardNumber"]{
-  color: white;
-  font-size: 32px;
-  background-color: #171a1c;
-  border: none;
-  outline: none;
-}
-
-input[name="ccvNumber"]{
-  color: white;
-  background-color: #171a1c;
-  border: none;
-  outline: none;
-  width: 32px;
-}
-
-input[name="month"]{
-  color: white;
-  background-color: #171a1c;
-  border: none;
-  outline: none;
-}
-
-input[name="year"]{
-  width: 60px;
-  color: white;
-  background-color: #171a1c;
-  border: none;
-  outline: none;
-}
-
-::placeholder{
-  color: grey;
-}
-
-.expirationCcv{
-  display: flex;
-  justify-content: space-between;
-}
-.expiration{
-  display: flex;
-  justify-content: space-between;
-  width:208px;
+.contact{
+  height:200px;
+  margin-top:20px;
   
 }
-.monthButton{
-  position: relative;
+.row{
+  display:flex;
+  font-size: 11px
+}
+.row div{
+  height:20px;
 }
 
-.list{
-  position: absolute;
-  background-color: grey;
-    height: 80px;
-    background-color: grey;
-    overflow-y: scroll;
-    width: 100px;
+.row div:first-child{
+  width:30%;
+  background:blue;
 }
 
-.list > div {
-  padding: 5px;
-  border-bottom: 1px solid #fff;
+.row div:last-child{
+  width:70%;
+}
+
+.skill{
+  height: 200px;
+}
+.language{
+  height:200px;
+}
+
+.right{
+  height:100%;
+  width:70%;
+  background: yellow;
 }

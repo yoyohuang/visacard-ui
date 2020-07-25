@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 import visaSrc from "./visa.png";
+import { transform, addBlank } from "./validate";
 
 function Card() {
   const [cardNumber, setCardNumber] = useState("");
   const [ccvNumber, setCcvNumber] = useState("");
+  const [isBopomo, toggleBopomo] = useState(false);
+  const [isExpand, toggleExpand] = useState(false);
   return (
     <article className="card">
       <div>
@@ -16,29 +19,63 @@ function Card() {
         <input
           type="text"
           name="cardNumber"
+          maxLength={19}
           placeholder="0000 0000 0000 0000"
           value={cardNumber}
+          onCompositionStart={() => {
+            toggleBopomo(true);
+          }}
+          onCompositionEnd={() => {
+            toggleBopomo(false);
+            setCardNumber(addBlank(transform(cardNumber)))
+          }}
           onChange={(e) => {
-            setCardNumber(e.target.value)
+            const input = e.target.value;
+            setCardNumber(input)
+            if (!isBopomo) {
+              setCardNumber(addBlank(transform(input)))
+            }
           }}
         ></input>
       </div>
-      <div>
+      <div className="expirationCcv">
         <div>
           <div>Expiration</div>
           <div className="expiration">
-            <input type="text" name="month" placeholder="January"></input>
-            <input type="text" name="year" placeholder="2015"></input>
+            <div className="monthButton">
+              <button onClick={() => { toggleExpand(!isExpand) }}>month</button>
+              {
+                (isExpand) ? (
+                  <div className="list">
+                    <div>January</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                    <div>February</div>
+                  </div>
+                ) : (
+                  null
+                )
+              }
+            </div>
+            <input type="text" name="year" placeholder="2015" />
           </div>
         </div>
         <div>
           <div>ccv</div>
-          <input type="text" name="ccvNumber" placeholder="000"
+          <input
+            type="text"
+            name="ccvNumber"
+            placeholder="000"
             value={ccvNumber}
-            onChange={(e) => {
-              setCcvNumber(e.target.value)
-            }}
-          ></input>
+            onChange={(e) => { setCcvNumber(e.target.value) }}
+          />
         </div>
       </div>
     </article>

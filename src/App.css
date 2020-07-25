@@ -52,15 +52,41 @@ input[name="month"]{
 }
 
 input[name="year"]{
+  width: 60px;
   color: white;
   background-color: #171a1c;
   border: none;
   outline: none;
 }
+
 ::placeholder{
   color: grey;
+}
+
+.expirationCcv{
+  display: flex;
+  justify-content: space-between;
 }
 .expiration{
   display: flex;
   justify-content: space-between;
+  width:208px;
+  
+}
+.monthButton{
+  position: relative;
+}
+
+.list{
+  position: absolute;
+  background-color: grey;
+    height: 80px;
+    background-color: grey;
+    overflow-y: scroll;
+    width: 100px;
+}
+
+.list > div {
+  padding: 5px;
+  border-bottom: 1px solid #fff;
 }
